@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Function of possible character options
 function generatePossibleCharsOptions(userAnswer) {
   var possibleCharsOptions = [];
   var dictionary = {
@@ -17,13 +18,13 @@ for (var i = 0; i < userAnswerArr.length; i++) {
   return possibleCharsOptions.flat();
 }
 
+// Function to prompt for password criteria
+function generatePassword() {
+  var passwordLength = prompt("Enter the length of your password (between 8 and 128 characters):");
 
-//function to prompt for password criteria
-function promptForPasswordCriteria() {
-  var passwordLength = prompt("Choose a password length between 8 and 128 characters:");
-
+  // Validate password length
   if (passwordLength < 8 || passwordLength > 128) {
-    alert("password length must be between 8 and 120 characters.");
-    return null;
+    alert("Invalid password length. Please enter a number between 8 and 128.");
+    return "";
   }
 }

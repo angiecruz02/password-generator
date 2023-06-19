@@ -13,8 +13,13 @@ function generatePossibleCharsOptions(userAnswer) {
 var userAnswerArr = userAnswer.split("+");
 for (var i = 0; i < userAnswerArr.length; i++) {
   var charsType = userAnswerArr[i];
-  possibleCharsOptions.push(dictionary[charsType]);
+  var dictionaryValue = dictionary[charsType];
+  if (!dictionaryValue) {
+    continue 
   }
+  possibleCharsOptions.push(dictionaryValue);
+  }
+
   return possibleCharsOptions.flat();
 }
 
@@ -27,4 +32,31 @@ function generatePassword() {
     alert("Invalid password length. Please enter a number between 8 and 128.");
     return "";
   }
+  
+  var password = "";
+  var userAnswer = prompt("Enter the character types you want in your password (lowercase, uppercase, numeric, specialCharacters), separated by a '+':");
+  var possibleChars = generatePossibleCharsOptions(userAnswer);
+
+  // Validate character type selection
+  if (possibleChars.length === 0) {
+    alert("No character types selected. Please try again.");
+    return password;
+  }
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * possibleChars.length);
+    password += possibleChars[randomIndex];
+  }
+
+  return password;
 }
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  if (password !== "") {
+    passwordText.value = password;
+  }
+}
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);

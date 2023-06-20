@@ -16,9 +16,11 @@ Once you have made your selections, click the "Generate Password" button.
 
 ## Screenshot
 
-<img src="">
+<img width="980" alt="Screen Shot 2023-06-19 at 10 29 45 PM" src="https://github.com/angiecruz02/password-generator/assets/33271291/6c236b91-8780-4a6e-b2fa-e764747914b9">
 
 ## Link to deployed application
+
+https://angiecruz02.github.io/password-generator/ 
 
 ## Credits
 

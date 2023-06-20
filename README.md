@@ -15,7 +15,7 @@ To use the password generator, simply open the link of the deployed application.
 Once you have made your selections, click the "Generate Password" button.
 
 ## Screenshot
-
+<img src="">
 
 ## Link to deployed application
 
